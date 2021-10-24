@@ -21,3 +21,5 @@ integer = 0
 
 
 print("Value of integer = {}".format(integer))
+
+# notes
