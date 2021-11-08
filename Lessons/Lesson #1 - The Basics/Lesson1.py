@@ -1,7 +1,8 @@
 """
 Author: Ronald Munoz
 Date: OCT/23/2021
-"""
+""" 
+
 # Import global resources
 from sys import path
 path.append(".")
