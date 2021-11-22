@@ -73,7 +73,8 @@ print("\n* Variables *\n")
 # mi_dict = {"llave":"valor"}
 
 # print("El valor de mi_dict es = {} y es tipo {}".format(mi_dict, type(mi_dict)))
-
+ 
+ 
 
 
 print("\n* Casting *\n")
