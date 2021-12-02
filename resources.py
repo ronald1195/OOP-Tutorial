@@ -1,18 +1,19 @@
-from sys import exit
+from sys import exit, path
+import os
 
-WELCOME = "                         WELCOME"          
-LINE = "---------------------------------------------------------"
-L1_HEADER = "                        Lesson # 1"
-L2_HEADER = "                        Lesson # 2"  
-L3_HEADER = "                        Lesson # 3"  
-L4_HEADER = "                        Lesson # 4"  
-L5_HEADER = "                        Lesson # 5"  
-L6_HEADER = "                        Lesson # 6"  
-L7_HEADER = "                        Lesson # 7"
-L8_HEADER = "                        Lesson # 8" 
-L9_HEADER = "                        Lesson # 9" 
-L10_HEADER = "                        Lesson # 10" 
-UNDEFINED_HEADER = "             This lesson is not yet published"        
+WELCOME = "WELCOME"          
+LINE = "-"
+L1_HEADER = "Lesson # 1"  
+L2_HEADER = "Lesson # 2"  
+L3_HEADER = "Lesson # 3"  
+L4_HEADER = "Lesson # 4"  
+L5_HEADER = "Lesson # 5"  
+L6_HEADER = "Lesson # 6"  
+L7_HEADER = "Lesson # 7"
+L8_HEADER = "Lesson # 8" 
+L9_HEADER = "Lesson # 9" 
+L10_HEADER = "Lesson # 10" 
+UNDEFINED_HEADER = "This lesson is not yet published"        
 
 
 class bcolors:
@@ -31,34 +32,46 @@ class bcolors:
 def displayLessonIntroMessage(num):
 
     ERROR = False
+    # window_size, height= pyautogui.size()
+    window_size = os.get_terminal_size().columns
 
-    print(LINE)
+    print(LINE * window_size)
 
     if num == 1:
-        print(L1_HEADER)
+        # print(L1_HEADER)
+        print( " " * ((window_size//2) - len(L1_HEADER)) + L1_HEADER)
     elif num == 2:
-        print(L2_HEADER)
+        print( " " * ((window_size//2) - len(L2_HEADER)) + L2_HEADER)
     elif num == 3:
-        print(L3_HEADER)
+        # print(L3_HEADER)
+        print( " " * ((window_size//2) - len(L3_HEADER)) + L3_HEADER)
     elif num == 4:
-        print(L4_HEADER)
+        # print(L4_HEADER)
+        print( " " * ((window_size//2) - len(L4_HEADER)) + L4_HEADER)
     elif num == 5:
-        print(L5_HEADER)
+        # print(L5_HEADER)
+        print( " " * ((window_size//2) - len(L5_HEADER)) + L5_HEADER)
     elif num == 6:
-        print(L6_HEADER)
+        # print(L6_HEADER)
+        print( " " * ((window_size//2) - len(L6_HEADER)) + L6_HEADER)
     elif num == 7:
-        print(L7_HEADER)
+        # print(L7_HEADER)
+        print( " " * ((window_size//2) - len(L7_HEADER)) + L7_HEADER)
     elif num == 8:
-        print(L8_HEADER)
+        # print(L8_HEADER)
+        print( " " * ((window_size//2) - len(L8_HEADER)) + L8_HEADER)
     elif num == 9:
-        print(L9_HEADER)
+        # print(L9_HEADER)
+        print( " " * ((window_size//2) - len(L9_HEADER)) + L9_HEADER)
     elif num == 10:
-        print(L10_HEADER)
+        # print(L10_HEADER)
+        print( " " * ((window_size//2) - len(L10_HEADER)) + L10_HEADER)
     else:
         ERROR = True
-        print(UNDEFINED_HEADER)
+        # print(UNDEFINED_HEADER)
+        print( " " * ((window_size//2) - len(UNDEFINED_HEADER)) + UNDEFINED_HEADER)
 
-    print(LINE)
+    print(LINE * window_size)
 
     if ERROR: 
         exit()
@@ -103,6 +116,11 @@ class TestBed:
         print(f"{color}------------------- TESTBED COMPLETED -------------------{bcolors.ENDC}")
         print(f"{color}Summary: [{self.succeded_tests}] of [{self.total}] passed{bcolors.ENDC}")
 
+
+
+if __name__ == "__main__":
+   # stuff only to run when not called via 'import' here
+   pass
 
 # for i in range(0, 16):
 #     for j in range(0, 16):
