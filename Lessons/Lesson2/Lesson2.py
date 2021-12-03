@@ -16,7 +16,7 @@ import pytest
 
 def func1():
     """Que se necesita para que este if statement regrese "Correcto"?"""
-    flag = 0
+    flag = 1
 
     if flag:
         return "Correcto"
@@ -26,7 +26,8 @@ def func1():
 
 def func2():
     """ Cuales numeros hacen que esta funcion regrese "Correcto"?"""
-    n = 0
+    # Respuesta: Numeros impares
+    n = 1
 
     if n%2 == 0:
         return "Incorrecto"
@@ -66,8 +67,68 @@ def transformar_puntos_a_calificacion(puntaje):
     3. Si la funcion recibe un numero fuera del rango 0 - 100 ya sea mayor o menor
        la funcion debe regresar la palabra "Error"
     """
-    pass
+    # Revisa por errores primero
+    if isinstance(puntaje, float) or puntaje < 0 or puntaje > 100:
+        return "Error"
 
+    # Revisa cada rango de puntajes
+    if puntaje in range(93, 101):
+        return "A+"
+    elif puntaje in range(90, 93):
+        return "A"
+    elif puntaje in range(87, 90):
+        return "B+"
+    elif puntaje in range(83, 87):
+        return "B"
+    elif puntaje in range(80, 83):
+        return "B-"
+    elif puntaje in range(77, 80):
+        return "C+"
+    elif puntaje in range(73, 77):
+        return "C"
+    elif puntaje in range(70, 73):
+        return "C-"
+    elif puntaje in range(67, 70):
+        return "D+"
+    elif puntaje in range(63, 67):
+        return "D"
+    elif puntaje in range(60, 63):
+        return "D-"
+    else:
+        return "F"
+
+
+
+def es_año_biciesto(año):
+    """
+    Esta funcion debe de regresar un valor Boolean [ True, False ]
+    El proposito de esta funcion es checar si el argumento "año" es o no un año bisiesto.
+
+    Hay una manera en especifico para verificar si un año es o no bisiesto. Intenta analisar
+    una lista de años bisiestos. Utiliza esta lista: https://www.calendar.best/leap-years.html
+    si necesitas. 
+
+    Si no tienes exito decifrando el algorithmo para verificar un año bisiesto utiliza el 
+    siguiente pseudocodigo:
+
+    # Si un año es divisible entre 400 entonces es bisiesto
+    # si un año es divisible entre 100 entonces no es bisiesto
+    # si un año es divisible enter 4 entonces es biciesto
+    # en cualquier otro caso no es biciesto
+
+    Si aun asi tienes dificultades decifrando este algoritmo visita https://www.geeksforgeeks.org/program-check-given-year-leap-year/
+    para ver diferentes versiones de este algoritmo en diferentes lenguajes. 
+    """
+    if (año % 4) == 0:
+        if (año % 100) == 0:
+            if (año % 400) == 0:
+                return True
+            else:
+                return False
+        else:
+             return True
+    else:
+        return False
 
 
 

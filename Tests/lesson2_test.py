@@ -21,11 +21,11 @@ def test_func1():
 def test_func2():
     assert L2.func2() == "Correcto"
 
-test_three_input_output_data = [
+test_score_conversion_input_output_data = [
     (99, "A+"),
     (90, "A"),
-    (85, "B+"),
-    (81, "B"),
+    (85, "B"),
+    (81, "B-"),
     (82, "B-"),
     (77, "C+"),
     (76, "C"),
@@ -40,7 +40,23 @@ test_three_input_output_data = [
     (-20, "Error")      # Negative numbers not allowed
 ]
 
-@pytest.mark.parametrize('sample, expected', test_three_input_output_data)
+@pytest.mark.parametrize('sample, expected', test_score_conversion_input_output_data)
 def test_score_conversion(sample, expected):
 
     assert L2.transformar_puntos_a_calificacion(sample) == expected
+
+
+test_leap_year_input_output_data = [
+    (1900, False),
+    (2100, False),
+    (2200, False),
+    (2112, True),
+    (2020, True),
+    (2024, True),
+    (2000, True)
+]
+
+@pytest.mark.parametrize('sample, expected', test_leap_year_input_output_data)
+def test_leap_year(sample, expected):
+
+    assert L2.es_año_biciesto(sample) == expected
