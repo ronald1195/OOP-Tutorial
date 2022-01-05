@@ -33,16 +33,7 @@ def func1(num_l):
    "\n" va a ser parte de cada una de las lineas generadas por esta funcion. Al mismo tiempo,
    cada numero ira seguido de un espacio " ".
    """
-   return_string = ""
-
-   for i in range(1, num_l + 1):
-      # Run inner loop i+1 times
-      for j in range(1, i + 1):
-         return_string += str(j) + " "
-
-      return_string += "\n"
-
-   return return_string
+   pass
 
 
 def func2(num_rows):
@@ -67,24 +58,7 @@ def func2(num_rows):
 
    Tu funcion va a ser probada en contra de varios test cases. 
    """
-   return_string = ""
-   c = 1
-   for i in range(num_rows):
-
-      # Print required spaces
-      return_string += (" " * (num_rows - i))
-
-      for k in range(i + 1):
-         if k == 0 or i == 0:
-            c = 1
-         else:
-            c = c * (i-k+1)/k
-         
-         return_string += (str(int(c))  + " ")
-
-      return_string += "\n"
-
-   return return_string
+   pass
 
 
 def func3(n):
@@ -110,15 +84,7 @@ def func3(n):
    func3(1) == 1
    func3(7) == 13
    """
-   fib = [None] * (n+1)
-
-   fib[0] = 0
-   fib[1] = 1
-   
-   for i in range(2, n+1):
-      fib[i] = fib[i - 1] + fib[i - 2]
-
-   return fib[n]
+   pass
 
 
 
