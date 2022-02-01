@@ -13,14 +13,15 @@ import pytest
    Recursion
 """
 
-def rec1():
-    """Que se necesita para que este if statement regrese "Correcto"?"""
-    flag = 0
+def fibonacci_recursive(n):
+    """
+    """
+    pass
 
-    if flag:
-        return "Correcto"
-    else:
-        return "Incorrecto"
+def factorial_recursive(n):
+    """
+    """
+    pass
 
 
 if __name__ == "__main__":
